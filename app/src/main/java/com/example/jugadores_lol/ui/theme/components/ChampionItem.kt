@@ -1,6 +1,6 @@
 package com.example.jugadores_lol.ui.theme.components
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -30,10 +29,15 @@ import com.example.jugadores_lol.R
 import com.example.jugadores_lol.data.Champion
 
 @Composable
-fun ChampionItem(champion: Champion){
+fun ChampionItem(champion: Champion,
+                 onClick: () -> Unit){
     Row(
-        modifier = Modifier.fillMaxWidth().padding(16.dp),
+        modifier = Modifier
+            .clickable { onClick() }
+            .fillMaxWidth()
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
+
         
     ) {
         //Imagen Circular con Coil
@@ -65,7 +69,7 @@ fun ChampionItem(champion: Champion){
                     text = champion.description,
                     style = MaterialTheme.typography.titleMedium
                 )
-                IconButton(onClick = {/*TODO*/}
+                IconButton(onClick = onClick
                 ){
                     Icon(
                         modifier =  Modifier.size(25.dp),

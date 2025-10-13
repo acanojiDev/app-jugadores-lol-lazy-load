@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import com.example.jugadores_lol.ui.theme.JugadoreslolTheme
-import com.example.jugadores_lol.ui.theme.screens.ChampionScreen
+import com.example.jugadores_lol.ui.theme.screens.ChampionApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JugadoreslolTheme {
                 Surface(color = MaterialTheme.colorScheme.background ) {
-                    ChampionScreen()
+                    ChampionApp()
                 }
             }
         }
